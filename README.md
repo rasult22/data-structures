@@ -1,5 +1,5 @@
 # data-structures
-Common data stuctures implementations on JS
+Common data stuctures implementations in JS
 
 ## Linked Lists
 ```JavaScript
