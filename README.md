@@ -35,6 +35,33 @@ class LinkedList {
     if (!this.head) this.head = newNode
   }
   
+  find (value) {
+  	if (!this.head) {
+      return null
+    }
+    
+    let curNode = this.head
+    
+    while (curNode) {
+      if (curNode.value === value) {
+      	return curNode
+      }
+      
+      curNode = curNode.next
+    }
+    
+    return null
+  }
+  
+  insertAfter (value, afterValue) {
+  	const existingNode = this.find(afterValue)
+    
+    if (existingNode) {
+      const newNode = { value, next: existingNode.next }
+      existingNode.next = newNode
+    }
+  }
+  
   delete (value) {
   	if (!this.head) return null
     
@@ -82,9 +109,10 @@ console.log(list.toArray(), "initial")
 
 list.delete("Rasul")
 
+list.append("hey")
+list.insertAfter("insertedValue", 1)
+console.log(list.toArray(), "end")
 
-console.log(list)
-console.log(list.toArray(), "initial")
 
 ```
 #
